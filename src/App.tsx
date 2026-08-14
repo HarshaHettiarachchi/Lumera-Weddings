@@ -21,7 +21,7 @@ function App() {
         : "min-h-screen bg-gray-900 text-white"
     }
   >
-    <BrowserRouter>
+    <BrowserRouter basename="/Lumera-Weddings">
       <Navbar />
       <Routes>
      
