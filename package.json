@@ -1,0 +1,34 @@
+{
+  "name": "npm",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "@tanstack/react-table": "^8.21.3",
+    "formik": "^2.4.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-fast-marquee": "^1.6.5",
+    "react-icons": "^5.7.0",
+    "react-router-dom": "^7.18.1",
+    "swiper": "^14.0.6",
+    "tailwindcss": "^4.3.2",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  }
+}

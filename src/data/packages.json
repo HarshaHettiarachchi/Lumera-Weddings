@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Wedding Package",
+    "price": "Rs. 50,000",
+    "description": "Capture every unforgettable moment of your wedding day with our professional photography service."
+  },
+  {
+    "id": 2,
+    "title": "Engagement Package",
+    "price": "Rs. 25,000",
+    "description": "Celebrate your love story with a beautiful engagement photoshoot in your favorite location."
+  },
+  {
+    "id": 3,
+    "title": "Baby Photography",
+    "price": "Rs. 15,000",
+    "description": "Preserve your baby's precious memories with our creative and heartwarming photography sessions."
+  },
+  {
+    "id": 4,
+    "title": "Family Photography",
+    "price": "Rs. 20,000",
+    "description": "Create timeless family portraits filled with love, joy, and unforgettable moments."
+  },
+  {
+    "id": 5,
+    "title": "Birthday Package",
+    "price": "Rs. 18,000",
+    "description": "Capture every smile and celebration with our fun and vibrant birthday photography service."
+  },
+  {
+    "id": 6,
+    "title": "Special Events",
+    "price": "Rs. 30,000",
+    "description": "Professional photography for corporate events, parties, anniversaries, and other special occasions."
+  }
+]

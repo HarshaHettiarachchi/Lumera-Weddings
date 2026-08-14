@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Kasun Perera",
+    "package": "Wedding",
+    "date": "2026-08-15"
+  },
+  {
+    "id": 2,
+    "name": "Nimali Silva",
+    "package": "Engagement",
+    "date": "2026-09-10"
+  },
+  {
+    "id": 3,
+    "name": "Amila Fernando",
+    "package": "Baby Shoot",
+    "date": "2026-10-05"
+  }
+]
