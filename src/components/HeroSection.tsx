@@ -35,7 +35,7 @@ export default function HeroSection() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
 
       <img
-        src={currentHero.image}
+        src={`${import.meta.env.BASE_URL}${currentHero.image}`}
         alt={currentHero.title}
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -78,6 +78,7 @@ export default function HeroSection() {
       </button>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+
         {heroSlides.map((_, index) => (
           <button
             key={index}
@@ -90,6 +91,7 @@ export default function HeroSection() {
             }`}
           />
         ))}
+
       </div>
 
     </section>
