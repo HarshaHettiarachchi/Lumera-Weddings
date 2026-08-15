@@ -2,31 +2,31 @@
   {
     "id": 1,
     "title": "Wedding Photography",
-    "image": "/src/assets/images/1.jpg"
+    "image": "images/1.jpg"
   },
   {
     "id": 2,
     "title": "Engagement Photography",
-    "image": "/src/assets/images/2.jpg"
+    "image": "images/2.jpg"
   },
   {
     "id": 3,
     "title": "Baby Photography",
-    "image": "/src/assets/images/3.jpg"
+    "image": "images/3.jpg"
   },
   {
     "id": 4,
     "title": "Family Photography",
-    "image": "/src/assets/images/4.jpg"
+    "image": "images/4.jpg"
   },
   {
     "id": 5,
     "title": "Birthday Event",
-    "image": "/src/assets/images/5.jpg"
+    "image": "images/5.jpg"
   },
   {
     "id": 6,
     "title": "Special Event",
-    "image": "/src/assets/images/6.jpg"
+    "image": "images/6.jpg"
   }
 ]

@@ -28,9 +28,10 @@ export default function GalleryCard({
     >
       {/* Image container */}
       <div className="overflow-hidden">
+        
         {/* Displays the gallery image */}
         <img
-          src={image}
+          src={`${import.meta.env.BASE_URL}${image}`}
           alt={title}
           className="
             w-full

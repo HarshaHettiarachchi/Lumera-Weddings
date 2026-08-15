@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "image": "/src/assets/images/1.jpg",
+    "image": "images/1.jpg",
     "title": "Capturing Your Beautiful Moments",
     "subtitle": "Professional photography for your most special memories."
   },
   {
     "id": 2,
-    "image": "/src/assets/images/5.jpg",
+    "image": "images/5.jpg",
     "title": "Your Story, Our Lens",
     "subtitle": "We turn your precious moments into timeless memories."
   },
   {
     "id": 3,
-    "image": "/src/assets/images/3.jpg",
+    "image": "images/3.jpg",
     "title": "Memories That Last Forever",
     "subtitle": "Beautiful photography for every special occasion."
   }

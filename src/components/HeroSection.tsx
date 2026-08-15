@@ -69,7 +69,7 @@ export default function HeroSection() {
 
       {/* Background Image */}
       <img
-        src={currentHero.image}
+        src={`${import.meta.env.BASE_URL}${currentHero.image}`}
         alt={currentHero.title}
         className="absolute inset-0 w-full h-full object-cover"
       />
