@@ -1,264 +1,116 @@
-import { Link, NavLink } from "react-router-dom";
-import { Code2, Sun, Moon, Menu, X } from "lucide-react";
+// Imports NavLink for navigation and active link styling
+import { NavLink } from "react-router-dom";
+
+// Imports useContext and useState
 import { useContext, useState } from "react";
 
+// Imports ThemeContext for theme switching
 import { ThemeContext } from "../context/ThemeContext";
 
+// Imports the camera icon for the website logo
+import { FaCamera } from "react-icons/fa";
+
+// Imports hamburger and close icons
+import { Menu, X } from "lucide-react";
+
 export default function Navbar() {
+  // Gets the current theme and theme toggle function from ThemeContext
   const { theme, toggleTheme } = useContext(ThemeContext);
 
+  // Controls whether the mobile menu is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `
-    transition duration-300
-    ${
-      isActive
-        ? "text-blue-600 font-semibold"
-        : "text-gray-700 dark:text-gray-300 hover:text-blue-600"
-    }
-    `;
-
+  // Closes the mobile menu
   const closeMenu = () => {
     setIsOpen(false);
   };
 
-  return (
-    <header
-      className="
-      fixed
-      top-0
-      left-0
-      right-0
-      z-50
-      bg-white
-      dark:bg-gray-950
-      border-b
-      border-blue-100
-      dark:border-gray-800
-      shadow-md
-      transition-colors
-      duration-300
-      "
-    >
-      <div
-        className="
-        max-w-7xl
-        mx-auto
-        px-4
-        sm:px-6
-        py-4
-        flex
-        items-center
-        justify-between
-        "
-      >
-        {/* Logo */}
+  // Applies different styles to active and inactive navigation links
+  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `px-3 py-2 rounded-lg transition duration-300 ${
+      isActive
+        ? "bg-yellow-500 text-white font-semibold"
+        : "text-white hover:bg-gray-800"
+    }`;
 
-        <Link
+  return (
+    <nav className="sticky top-0 z-50 bg-black text-white shadow-md">
+
+      {/* Main Navbar */}
+      <div className="flex justify-between items-center px-4 sm:px-8 py-4">
+
+        {/* Website Logo */}
+        <NavLink
           to="/"
           onClick={closeMenu}
-          className="
-          flex
-          items-center
-          gap-3
-          group
-          "
+          className="flex items-center gap-2 text-xl sm:text-2xl font-bold transition duration-300 hover:text-yellow-500"
         >
-          <div
-            className="
-            w-10
-            h-10
-            sm:w-12
-            sm:h-12
-            rounded-xl
-            bg-gradient-to-r
-            from-blue-600
-            via-indigo-600
-            to-cyan-500
-            flex
-            items-center
-            justify-center
-            text-white
-            shadow-lg
-            group-hover:scale-110
-            transition-transform
-            "
-          >
-            <Code2 size={24} />
-          </div>
+          <FaCamera className="text-yellow-500 transition-transform duration-300 hover:rotate-12" />
 
-          <div>
-            <h2
-              className="
-              text-lg
-              sm:text-xl
-              font-bold
-              text-gray-900
-              dark:text-white
-              "
-            >
-              ICT Academy Hub
-            </h2>
-
-            <p
-              className="
-              hidden
-              sm:block
-              text-xs
-              text-gray-500
-              dark:text-gray-400
-              "
-            >
-              Learn • Build • Deploy
-            </p>
-          </div>
-        </Link>
+          <span>Lumera Weddings</span>
+        </NavLink>
 
         {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-3">
 
-        <nav
-          className="
-          hidden
-          md:flex
-          items-center
-          gap-8
-          "
-        >
           <NavLink to="/" className={navLinkClass}>
             Home
           </NavLink>
 
-          <NavLink to="/lessons" className={navLinkClass}>
-            Lessons
+          <NavLink to="/gallery" className={navLinkClass}>
+            Gallery
           </NavLink>
 
-          <NavLink to="/projects" className={navLinkClass}>
-            Projects
+          <NavLink to="/packages" className={navLinkClass}>
+            Packages
           </NavLink>
 
-          <NavLink to="/resources" className={navLinkClass}>
-            Resources
+          <NavLink to="/booking" className={navLinkClass}>
+            Booking
           </NavLink>
 
-          {/* Theme Button */}
+          <NavLink to="/contact" className={navLinkClass}>
+            Contact
+          </NavLink>
 
+          {/* Theme Switch */}
           <button
             onClick={toggleTheme}
-            className="
-            w-10
-            h-10
-            rounded-full
-            flex
-            items-center
-            justify-center
-            bg-gray-100
-            dark:bg-gray-800
-            text-gray-700
-            dark:text-yellow-400
-            hover:scale-110
-            transition
-            "
+            className="px-3 py-2 bg-white text-black rounded-lg transition duration-300 hover:bg-yellow-500 hover:text-white"
           >
-            {theme === "light" ? (
-              <Moon size={20} />
-            ) : (
-              <Sun size={20} />
-            )}
+            {theme === "light" ? "🌙 Dark" : "☀️ Light"}
           </button>
 
-          {/* Ask Question */}
-
-          <Link
-            to="/ask-question"
-            className="
-            rounded-xl
-            bg-gradient-to-r
-            from-blue-600
-            to-cyan-500
-            px-5
-            py-2.5
-            text-white
-            font-medium
-            shadow-lg
-            hover:scale-105
-            transition
-            "
-          >
-            Ask Question
-          </Link>
-        </nav>
+        </div>
 
         {/* Mobile Buttons */}
-
         <div className="flex md:hidden items-center gap-2">
-          {/* Theme Button */}
 
+          {/* Theme Switch */}
           <button
             onClick={toggleTheme}
-            className="
-            w-10
-            h-10
-            rounded-full
-            flex
-            items-center
-            justify-center
-            bg-gray-100
-            dark:bg-gray-800
-            text-gray-700
-            dark:text-yellow-400
-            "
+            className="px-3 py-2 bg-white text-black rounded-lg text-sm"
           >
-            {theme === "light" ? (
-              <Moon size={20} />
-            ) : (
-              <Sun size={20} />
-            )}
+            {theme === "light" ? "🌙" : "☀️"}
           </button>
 
-          {/* Hamburger Button */}
-
+          {/* Hamburger Menu */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="
-            w-10
-            h-10
-            flex
-            items-center
-            justify-center
-            rounded-lg
-            bg-gray-100
-            dark:bg-gray-800
-            text-gray-800
-            dark:text-white
-            "
+            className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
+
         </div>
+
       </div>
 
       {/* Mobile Navigation Menu */}
-
       {isOpen && (
-        <nav
-          className="
-          md:hidden
-          flex
-          flex-col
-          items-center
-          gap-6
-          px-6
-          py-6
-          bg-white
-          dark:bg-gray-950
-          border-t
-          border-gray-200
-          dark:border-gray-800
-          shadow-lg
-          "
-        >
+        <div className="md:hidden flex flex-col items-center gap-3 px-4 pb-6">
+
           <NavLink
             to="/"
             onClick={closeMenu}
@@ -268,51 +120,40 @@ export default function Navbar() {
           </NavLink>
 
           <NavLink
-            to="/lessons"
+            to="/gallery"
             onClick={closeMenu}
             className={navLinkClass}
           >
-            Lessons
+            Gallery
           </NavLink>
 
           <NavLink
-            to="/projects"
+            to="/packages"
             onClick={closeMenu}
             className={navLinkClass}
           >
-            Projects
+            Packages
           </NavLink>
 
           <NavLink
-            to="/resources"
+            to="/booking"
             onClick={closeMenu}
             className={navLinkClass}
           >
-            Resources
+            Booking
           </NavLink>
 
-          <Link
-            to="/ask-question"
+          <NavLink
+            to="/contact"
             onClick={closeMenu}
-            className="
-            w-full
-            max-w-xs
-            text-center
-            rounded-xl
-            bg-gradient-to-r
-            from-blue-600
-            to-cyan-500
-            px-5
-            py-3
-            text-white
-            font-medium
-            shadow-lg
-            "
+            className={navLinkClass}
           >
-            Ask Question
-          </Link>
-        </nav>
+            Contact
+          </NavLink>
+
+        </div>
       )}
-    </header>
+
+    </nav>
   );
 }
